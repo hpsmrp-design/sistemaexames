@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gerador de Exames – HP (Catálogo Completo+)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<style>
+:root{--brand:#05488c;--brand2:#2da3d5;--brand3:#acd6e9;--ink:#0b2440;--muted:#5b728d;--line:#e6eef6;--card:#ffffff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff 0%,#f4fbff 100%);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink)}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px dashed var(--line)}
+header .wrap{max-width:1200px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.logo{display:inline-flex;gap:10px;align-items:center;color:#05488c;padding:6px 12px;border-radius:20px;font-weight:800}
+main{max-width:1200px;margin:0 auto;padding:14px}
+.grid{display:grid;grid-template-columns:380px 1fr;gap:14px}@media (max-width:980px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px dashed var(--line);border-radius:22px;padding:12px;box-shadow:0 12px 40px rgba(5,72,140,.08)}
+label{display:block;color:#3d556e;font-size:.9rem;margin:8px 0 6px}
+input,select,textarea{width:100%;padding:.7rem .9rem;border:1px dashed var(--line);border-radius:14px;background:#fff}
+textarea{min-height:90px;resize:vertical}
+.controls{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px dashed var(--line);border-radius:14px;background:#fff;padding:.7rem 1rem;cursor:pointer;font-weight:700}
+.btn:hover{background:#f8fcff}.btn-primary{background:linear-gradient(135deg,var(--brand) 0%,var(--brand2) 100%);color:#fff;border:none}
+.btn-primary:hover{filter:brightness(.98)}
+.list{max-height:520px;overflow:auto;border:1px dashed var(--line);border-radius:16px;padding:6px;background:#fff}
+.item{padding:10px;border-radius:12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border:1px dashed transparent}
+.item small{color:#5b728d}.item:hover{background:#f7fbff;border-color:#d7ecfb}.sel{background:#f7fbff;border-color:#d7ecfb}
+.paper{width:860px;min-height:1180px;margin:0 auto;background:#fff;border:2px dashed var(--line);border-radius:28px;padding:0 0 28px;position:relative;overflow:hidden}
+.doc-head{padding:22px 24px;background:linear-gradient(180deg,#fff 0%,#f6fbff 80%);border-bottom:1px dashed var(--line);display:grid;grid-template-columns:1fr auto;gap:12px}
+.doc-brand{display:flex;gap:12px;align-items:center}.doc-title{font-weight:800;color:#05488c}
+.meta{font-size:.9rem;color:#5b728d;display:flex;gap:12px;align-items:center}
+.meta .pill{background:#eaf6ff;border:1px dashed var(--line);padding:3px 10px;border-radius:999px;color:#0f172a}
+.hr{border-top:1px dashed var(--line);margin:10px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.box{border:1px dashed var(--line);border-radius:14px;padding:10px;background:#fff}
+.section-title{display:flex;align-items:center;gap:10px;margin:10px 0 8px}.section-title .dot{width:12px;height:12px;border-radius:999px;background:#2da3d5;box-shadow:0 0 0 4px #acd6e9}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.thumb{border:1px dashed var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.thumb img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#0b1220}
+.thumb footer{display:flex;gap:6px;border-top:1px dashed var(--line);padding:6px}
+.drop{border:2px dashed #acd6e9;border-radius:14px;padding:12px;text-align:center;color:#05488c;background:#f6fbff}
+.sigline{height:58px;border-bottom:1px dashed #bddcf0;margin-bottom:6px;position:relative}
+.sigimg{position:absolute;left:50%;transform:translateX(-50%);top:-6px;height:80px;object-fit:contain;opacity:.95;display:none}
+footer.doc{position:absolute;left:0;right:0;bottom:0;padding:12px 24px;display:flex;justify-content:space-between;color:#475569;font-size:.85rem;border-top:1px dashed var(--line);background:#f6fbff}
+.badge-soft{display:inline-block;background:#eaf6ff;border:1px dashed var(--line);padding:4px 12px;border-radius:999px}
+.small{font-size:.9rem;color:#6b7280}.table{border:1px solid #e6edf6;border-radius:12px;overflow:hidden}
+.table header,.table .row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:6px;align-items:center}
+.table header{background:#f0f8ff;color:#05488c;font-weight:700;padding:8px 10px;border-bottom:1px solid #e6edf6}
+.table .row{padding:6px 10px;border-bottom:1px dashed #e6edf6}.hide{display:none}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="logo">Gerador de Exames – HP</div></div></header>
+
+<main class="grid">
+  <aside class="card">
+    <div class="grid2">
+      <select id="cat"></select>
+      <input id="q" placeholder="Buscar exame por nome ou ID"/>
+    </div>
+    <div id="list" class="list" style="margin-top:8px"></div>
+    <div class="hr"></div>
+
+    <label>Unidade</label>
+    <select id="unidSel">
+      <option selected>HP Santa Marcelina – Centro de Imagem</option>
+      <option>HP Santa Marcelina – Laboratório de Análises Clínicas</option>
+      <option>HP Santa Marcelina – Cardiologia (ECG / MAPA / Holter / Eco)</option>
+      <option>HP Santa Marcelina – Neurologia (EEG / EMG / Potenciais)</option>
+      <option>HP Santa Marcelina – Obstetrícia & Ginecologia (USG)</option>
+      <option>HP Santa Marcelina – Oftalmologia (Diagnóstico)</option>
+      <option>HP Santa Marcelina – Otorrinolaringologia (Audiologia)</option>
+      <option>HP Santa Marcelina – Dermatologia (Procedimentos / Biópsias)</option>
+      <option>HP Santa Marcelina – Endocrinologia (Ambulatório)</option>
+      <option>HP Santa Marcelina – Ortopedia (Imagem Músculoesquelética)</option>
+      <option>HP Santa Marcelina – Traumatologia (Urgência)</option>
+      <option>HP Santa Marcelina – Oncologia (Quimioterapia / Patologia)</option>
+      <option>HP Santa Marcelina – Fisioterapia (Reabilitação)</option>
+      <option>HP Santa Marcelina – Administração (Atestados/Relatórios)</option>
+      <option>Outra...</option>
+    </select>
+    <input id="unid" class="hide" placeholder="Digite o nome da unidade"/>
+
+    <label>Data</label><input id="data" placeholder="dd/mm/aaaa hh:mm">
+    <label>Paciente</label><input id="paciente" placeholder="Nome completo">
+    <div class="grid2">
+      <input id="doc" placeholder="Passaporte/ID"><input id="idade" placeholder="Idade">
+    </div>
+    <div class="grid2">
+      <input id="sangue" placeholder="Tipo sanguíneo"><input id="contato" placeholder="Telefone (055)">
+    </div>
+    <label>Profissional</label>
+    <div class="grid2">
+      <input id="medico" placeholder="Nome do profissional"><input id="crm" placeholder="Registro (CRM/CRP/CREFITO…)">
+    </div>
+    <div class="hr"></div>
+
+    <strong>Assinatura do profissional</strong>
+    <div class="grid2" style="align-items:center">
+      <div id="sigPrev" class="box" style="height:56px;display:grid;place-items:center;color:#64748b">sem assinatura</div>
+      <div class="controls">
+        <button id="bSigUp" class="btn">Carregar imagem</button>
+        <button id="bSigSave" class="btn">Salvar p/ este registro</button>
+      </div>
+      <input id="sigFile" type="file" accept="image/*" style="display:none">
+    </div>
+
+    <div class="hr"></div>
+    <strong>Campos do exame</strong>
+    <div id="fields"></div>
+
+    <div class="hr"></div>
+    <strong>Imagens do exame</strong> <span class="small">(aparece para exames com imagem)</span>
+    <div id="drop" class="drop">Arraste imagens ou clique</div>
+    <input id="fileInput" type="file" accept="image/*" multiple style="display:none">
+    <div id="thumbs" class="gallery" style="margin-top:8px"></div>
+
+    <div class="hr"></div>
+    <div class="grid2">
+      <button id="bRender" class="btn">Atualizar laudo</button>
+      <div class="controls">
+        <button id="bPNG" class="btn btn-primary">Gerar PNG</button>
+        <a id="dl" class="btn" download="exame.png">Baixar PNG</a>
+      </div>
+    </div>
+  </aside>
+
+  <section class="card">
+    <div id="paper" class="paper">
+      <div class="doc-head">
+        <div class="doc-brand">
+          <div class="doc-title" id="v_unid">—</div>
+        </div>
+        <div class="meta">
+          <div>Data <span id="v_data" class="pill">—</span></div>
+          <div>Nº Exame <span id="v_num" class="pill">—</span></div>
+        </div>
+      </div>
+
+      <div style="padding:16px 24px">
+        <div class="grid3">
+          <div class="box"><div class="small">Paciente</div><strong id="v_paciente">—</strong></div>
+          <div class="box"><div class="small">Passaporte/ID</div><strong id="v_doc">—</strong></div>
+          <div class="box"><div class="small">Idade</div><strong id="v_idade">—</strong></div>
+          <div class="box"><div class="small">Tipo sanguíneo</div><strong id="v_sangue">—</strong></div>
+          <div class="box"><div class="small">Contato</div><strong id="v_contato">—</strong></div>
+          <div class="box"><div class="small">Profissional / Registro</div><strong><span id="v_medico">—</span> / <span id="v_crm">—</span></strong></div>
+        </div>
+        <div class="hr"></div>
+
+        <div><span class="small">Modelo:</span> <span id="v_title" class="badge-soft"></span>
+          <span class="small" style="margin-left:8px">Tag:</span> <span id="v_tag" class="badge-soft"></span>
+        </div>
+
+        <div id="view" class="box" style="margin-top:8px"></div>
+
+        <div id="secImgs" style="display:none">
+          <div class="section-title"><span class="dot"></span><strong>Imagens</strong></div>
+          <div id="viewGallery" class="gallery" style="margin-top:8px"></div>
+        </div>
+
+        <div class="hr"></div>
+        <div class="box">
+          <div class="sigline"><img id="sigImg" class="sigimg" alt=""></div>
+          <div style="text-align:center;color:#64748b;font-size:.9rem">Assinatura – <span id="sigM">—</span> (Registro <span id="sigC">—</span>)</div>
+        </div>
+      </div>
+
+      <footer class="doc">
+        <div>Documento amigável • <span id="v_code">—</span></div>
+        <div>Gerado digitalmente • Válido sem assinatura física</div>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s);
+const el=h=>{const d=document.createElement('div'); d.innerHTML=h; return d.firstElementChild;};
+const IMG_CATS=new Set(["🩹 Dermatologia","🫄 Obstetrícia","❤️ Cardiologia","👀 Oftalmologia","👂 Otorrino","🦴 Ortopedia","🧩 Neurologia","RX","TC","RM","USG"]);
+const CATS=["🧪 Laboratório","❤️ Cardiologia","🧩 Neurologia","🫄 Obstetrícia","👩 Ginecologia","🦴 Ortopedia","🚑 Traumatologia","👥 Psicologia","🧠 Psiquiatria","🩹 Dermatologia","🔬 Endocrinologia","👀 Oftalmologia","👂 Otorrino","🧬 Oncologia","RX","TC","RM","USG","🦿 Fisioterapia"];
+function area(id,cat,name,fields){return {id,cat,name,fields};}
+function tInput(id,label,val=""){return {type:"input",id,label,value:val};}
+function tSelect(id,label,options,val){return {type:"select",id,label,options,value:val};}
+function tText(id,label,val=""){return {type:"textarea",id,label,value:val};}
+function tChecks(id,label,options){return {type:"checkboxes",id,label,options};}
+function tDynamic(id,label){return {type:"dynamic",id,label};}
+
+/* ===== CATÁLOGO COMPLETO+ ===== */
+const CATALOG=[
+  // LAB
+  area("lab_hemo","🧪 Laboratório","Hemograma Completo",[tInput("hb","Hemoglobina (g/dL)"),tInput("ht","Hematócrito (%)"),tInput("leuco","Leucócitos (/mm³)"),tInput("neut","Neutrófilos (%)"),tInput("linf","Linfócitos (%)"),tInput("plaquetas","Plaquetas (/mm³)"),tText("imp","Impressão")]),
+  area("lab_pcr","🧪 Laboratório","PCR / VHS",[tInput("pcr","PCR (mg/L)"),tInput("vhs","VHS (mm/h)"),tText("imp","Impressão")]),
+  area("lab_renal","🧪 Laboratório","Função Renal",[tInput("ureia","Ureia (mg/dL)"),tInput("creat","Creatinina (mg/dL)"),tInput("egfr","eGFR (mL/min/1.73m²)"),tText("imp","Impressão")]),
+  area("lab_hep","🧪 Laboratório","Função Hepática",[tInput("tgo","TGO/AST (U/L)"),tInput("tgp","TGP/ALT (U/L)"),tInput("ggt","GGT (U/L)"),tInput("bt","Bilirrubina total (mg/dL)"),tInput("bd","Bilirrubina direta (mg/dL)"),tText("imp","Impressão")]),
+  area("lab_lipid","🧪 Laboratório","Perfil Lipídico",[tInput("colt","Colesterol total (mg/dL)"),tInput("ldl","LDL (mg/dL)"),tInput("hdl","HDL (mg/dL)"),tInput("tg","Triglicerídeos (mg/dL)"),tText("imp","Impressão")]),
+  area("lab_glic","🧪 Laboratório","Glicemia / HbA1c",[tInput("glic","Glicemia (mg/dL)"),tInput("hba1c","HbA1c (%)"),tText("imp","Impressão")]),
+  area("lab_ureia_creat","🧪 Laboratório","Ureia/Creatinina Urinária 24h",[tInput("vol","Volume 24h (mL)"),tInput("ureiaU","Ureia (mg/dL)"),tInput("creatU","Creatinina (mg/dL)"),tText("imp","Impressão")]),
+  area("lab_tireo","🧪 Laboratório","Painel Tireoidiano",[tInput("tsh","TSH (µUI/mL)"),tInput("t4l","T4 Livre (ng/dL)"),tInput("t3","T3 (ng/dL)"),tText("imp","Impressão")]),
+  area("lab_betahcg","🧪 Laboratório","Beta-HCG Quantitativo",[tSelect("amostra","Tipo de amostra",["Soro","Urina"],"Soro"),tInput("metodo","Método"),tInput("resultado","Resultado (mUI/mL)"),tText("refer","Valores de referência"),tText("interpret","Interpretação")]),
+  area("adm_atestado","🧪 Laboratório","Atestado Médico",[tText("texto","Texto do atestado"),tInput("dias","Dias de afastamento"),tInput("cid","CID (opcional)"),tText("obs","Observações")]),
+  area("lab_dna","🧪 Laboratório","Teste de DNA – Paternidade (multi)",[tSelect("tipo","Tipo",["Paternidade","Maternidade","Irmindade"]),tDynamic("participantes","Participantes (Nome, Parentesco, Amostra)"),tInput("prob","Probabilidade (%)"),tText("laudo","Texto descritivo / Observações")]),
+
+  // CARDIO
+  area("card_ecg","❤️ Cardiologia","ECG",[tInput("fc","FC (bpm)"),tInput("pr","PR (ms)"),tInput("qrs","QRS (ms)"),tInput("qtc","QTc (ms)"),tSelect("ritmo","Ritmo",["Sinusal","Arritmia sinusal","FA"]),tText("imp","Impressão"),tText("conduta","Conduta")]),
+  area("card_teste","❤️ Cardiologia","Teste Ergométrico",[tInput("protoc","Protocolo (ex.: Bruce)"),tInput("dur","Duração/estágio"),tInput("fcmax","FC máx (bpm)"),tInput("pa","PA pico (mmHg)"),tText("st","ST/arrítmias"),tText("sint","Sintomas/Interrupção"),tText("imp","Impressão/conduta")]),
+  area("card_mapa24","❤️ Cardiologia","MAPA 24h",[tText("medias","PA média/cargas"),tText("imp","Impressão")]),
+  area("card_mapa48","❤️ Cardiologia","MAPA 48h",[tText("medias","PA média/cargas"),tText("imp","Impressão")]),
+  area("card_holter","❤️ Cardiologia","Holter 24h",[tText("ritmos","Ritmos/FC média"),tText("pausas","Pausas/taquiarritmias"),tText("imp","Impressão")]),
+  area("card_eco_dopp","❤️ Cardiologia","Ecocardiograma com Doppler",[tInput("fe","Fraç. ejeção (%)"),tText("valvas","Valvas/gradientes"),tText("cam","Câmaras/hipertrofias"),tText("imp","Impressão")]),
+
+  // NEURO
+  area("neuro_eeg","🧩 Neurologia","EEG – Laudo",[tText("ach","Achados"),tText("imp","Impressão")]),
+  area("neuro_emg","🧩 Neurologia","EMG/NCV – Relatório",[tText("musc","Músculos/nerveos"),tText("res","Resultado"),tText("imp","Impressão")]),
+  area("neuro_pot","🧩 Neurologia","Potenciais Evocados",[tSelect("modal","Modalidade",["Auditivo","Visual","Motor"]),tText("param","Parâmetros/latências"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("neuro_exam","🧩 Neurologia","Exame Neurológico + Glasgow",[tInput("glasgow","Glasgow (3–15)"),tText("neuro","Exame neurológico"),tText("imp","Impressão")]),
+
+  // OBST/GINE
+  area("obs_morfo","🫄 Obstetrícia","USG Morfológica 2º tri – Resumo",[tInput("ig","IG (semanas)"),tText("biometria","Biometria"),tText("anatomia","Anatomia fetal"),tText("imp","Impressão")]),
+  area("obs_dopp","🫄 Obstetrícia","USG Obstétrica com Doppler",[tInput("ig","IG (semanas)"),tText("umb","Umbilical"),tText("cmed","Cerebral médio"),tText("uterinas","Uterinas"),tText("imp","Impressão")]),
+  area("obs_bnsg","🫄 Obstetrícia","Perfil Biofísico/FCF",[tInput("pbf","PBF (0–8)"),tText("fcf","FCF/variabilidade"),tText("imp","Impressão")]),
+  area("gine_usg_tv","👩 Ginecologia","USG Transvaginal – Resumo",[tText("utero","Útero/endométrio"),tText("ovarios","Ovários"),tText("imp","Impressão")]),
+  area("gine_colpo","👩 Ginecologia","Colposcopia",[tText("ach","Achados"),tText("biopsia","Biópsias"),tText("imp","Impressão")]),
+  area("gine_preventivo","👩 Ginecologia","Preventivo – Resultado",[tText("macro","Macroscopia"),tText("micro","Microscopia"),tText("diag","Diagnóstico")]),
+  area("gine_ist","👩 Ginecologia","Painel IST – Resumo",[tText("res","Resultados"),tText("trat","Tratamento"),tText("orient","Orientações")]),
+
+  // DERMATO
+  area("dermo_lesao","🩹 Dermatologia","Lesão Cutânea",[tText("local","Localização"),tText("pads","Padrões clínicos/dermatoscópicos"),tText("imp","Impressão"),tText("conduta","Conduta")]),
+  area("dermo_biopsia","🩹 Dermatologia","Biópsia de Pele – Laudo",[tText("macro","Macroscopia"),tText("micro","Microscopia"),tText("margens","Margens"),tText("diag","Diagnóstico")]),
+  area("dermo_alergia","🩹 Dermatologia","Patch Test – Teste Alérgico",[tText("reg","Regiões testadas"),tText("reac","Reações"),tText("imp","Impressão")]),
+
+  // ENDO
+  area("endo_diab","🔬 Endocrinologia","Diabetes – Acompanhamento",[tInput("hba1c","HbA1c (%)"),tText("glic","Glicemias/hipos"),tText("plano","Plano terapêutico")]),
+  area("endo_tireoide","🔬 Endocrinologia","Tireoide – Resumo",[tInput("tsh","TSH"),tInput("t4l","T4L"),tInput("t3","T3"),tText("imp","Impressão")]),
+  area("endo_obes","🔬 Endocrinologia","Obesidade – Conduta",[tText("aval","Avaliação"),tText("plano","Plano")]),
+
+  // OFTALMO
+  area("oft_refra","👀 Oftalmologia","Refração/Acuidade",[tText("od","OD"),tText("oe","OE"),tText("imp","Impressão")]),
+  area("oft_fundo","👀 Oftalmologia","Fundoscopia – Achados",[tText("ach","Achados"),tText("imp","Impressão")]),
+  area("oft_gonio","👀 Oftalmologia","Tonometria/Gonioscopia",[tInput("tio","TIO (mmHg)"),tText("ang","Ângulo"),tText("imp","Impressão")]),
+
+  // OTORRINO
+  area("oto_audi","👂 Otorrino","Audiometria",[tText("lim","Limiares"),tText("fala","Teste de fala"),tText("imp","Impressão")]),
+  area("oto_timpan","👂 Otorrino","Timpanometria",[tText("curva","Curvas"),tText("refl","Reflexos"),tText("imp","Impressão")]),
+  area("oto_endosc","👂 Otorrino","Nasofibroscopia – Relatório",[tText("ach","Achados"),tText("imp","Impressão"),tText("conduta","Conduta")]),
+
+  // ONCO
+  area("onco_quimio","🧬 Oncologia","Ciclo de Quimioterapia – Evolução",[tText("esq","Esquema"),tText("tox","Toxicidades"),tText("imp","Impressão")]),
+  area("onco_biopsia","🧬 Oncologia","Biópsia – Patologia",[tText("macro","Macroscopia"),tText("micro","Microscopia"),tText("margens","Margens"),tText("diag","Diagnóstico")]),
+
+  // ORTOP/TRAUMA
+  area("orto_joelho_rx","🦴 Ortopedia","RX Joelho – Laudo",[tText("ach","Achados"),tText("imp","Impressão"),tText("conduta","Conduta")]),
+  area("orto_coluna_rx","🦴 Ortopedia","RX Coluna – Laudo",[tText("ach","Achados"),tText("imp","Impressão"),tText("conduta","Conduta")]),
+  area("orto_ombro_usg","🦴 Ortopedia","USG Ombro – Manguito",[tText("tend","Tendões"),tText("bursa","Bursas"),tText("imp","Impressão")]),
+  area("trauma_urg","🚑 Traumatologia","Atendimento de Urgência",[tText("mec","Mecanismo do trauma"),tText("les","Lesões observadas"),tText("conduta","Conduta/Encaminhamentos")]),
+  area("trauma_retorno","🚑 Traumatologia","Reavaliação Pós-Trauma",[tText("evo","Evolução"),tText("imgs","Exames/Imagens"),tText("plano","Plano")]),
+
+  // RX (completo)
+  area("rx_torax","RX","RX Tórax PA",[tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_cranio","RX","RX Crânio",[tInput("inc","Incidências"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_face","RX","RX Seios da Face",[tInput("inc","Incidências"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_cervical","RX","RX Coluna Cervical",[tSelect("pos","Posicionamento",["AP/Perfil","AP/Perfil + Odontoide","Flex/Ext"]),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_toracica","RX","RX Coluna Torácica",[tInput("inc","Incidências"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_lombar","RX","RX Coluna Lombar",[tSelect("serie","Série",["AP/Perfil","AP/Perfil + Oblíquas","Dinâmicas"]),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_sacro","RX","RX Sacro-Cóccix",[tInput("inc","Incidências"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_total","RX","RX Coluna Total (Escoliose)",[tInput("met","Método (Cobb)"),tText("curvas","Curvaturas/ângulos"),tText("imp","Impressão")]),
+  area("rx_quadril","RX","RX Quadril/Bacia",[tSelect("lat","Lateralidade",["Direito","Esquerdo","Bilateral"]),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_ombro","RX","RX Ombro",[tSelect("lat","Lateralidade",["Direito","Esquerdo"]),tInput("inc","AP, Y, axial"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_cotovelo","RX","RX Cotovelo",[tSelect("lat","Lateralidade",["Direito","Esquerdo"]),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_punho","RX","RX Punho/Mão/Dedos",[tSelect("seg","Segmento",["Punho","Mão","Dedos"]),tSelect("lat","Lateralidade",["Direito","Esquerdo","Bilateral"]),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_braco","RX","RX Braço (Úmero)",[tSelect("lat","Lateralidade",["Direito","Esquerdo"]),tInput("inc","Incidências (AP/Perfil)"),tText("alin","Alinhamento/traço"),tText("partes","Partes moles"),tText("imp","Impressão")]),
+  area("rx_antebraco","RX","RX Antebraço (Rádio/Ulna)",[tSelect("lat","Lateralidade",["Direito","Esquerdo"]),tInput("inc","Incidências (AP/Perfil)"),tText("art","Cotovelo/punho"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_joelho","RX","RX Joelho",[tSelect("lat","Lateralidade",["Direito","Esquerdo","Bilateral"]),tInput("inc","AP/perfil/axial"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_femur","RX","RX Fêmur",[tSelect("lat","Lateralidade",["Direito","Esquerdo"]),tInput("inc","Incidências (AP/Perfil)"),tText("alin","Alinhamento/cominutivas"),tText("setor","Colo/diáfise/distal"),tText("imp","Impressão")]),
+  area("rx_tornozelo","RX","RX Tornozelo/Pé",[tSelect("seg","Segmento",["Tornozelo","Pé"]),tSelect("lat","Lateralidade",["Direito","Esquerdo","Bilateral"]),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_perna","RX","RX Perna (Tíbia/Fíbula)",[tSelect("lat","Lateralidade",["Direito","Esquerdo"]),tInput("inc","Incidências (AP/Perfil)"),tText("art","Joelho/tornozelo"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_clav","RX","RX Clavícula",[tSelect("lat","Lateralidade",["Direita","Esquerda"]),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_cost","RX","RX Costelas",[tSelect("lat","Lado",["Direitas","Esquerdas","Bilaterais"]),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rx_abd","RX","RX Abdome Agudo",[tSelect("inc","Incidências",["Supino","Orto/Decúbito","Série abdome agudo"]),tText("alca","Alças/níveis"),tText("ar","Ar livre"),tText("imp","Impressão")]),
+
+  // TC / RM / USG
+  area("tc_cranio","TC","TC Crânio s/contraste",[tText("ach","Achados"),tText("imp","Impressão")]),
+  area("tc_torax","TC","TC Tórax",[tText("ach","Parênquima/mediastino/vasos"),tText("imp","Impressão")]),
+  area("tc_abd","TC","TC Abdome/Pelve c/contraste",[tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rm_lombar","RM","RM Coluna Lombar",[tText("discos","Discos/forames/canal"),tText("ach","Achados"),tText("imp","Impressão")]),
+  area("rm_joelho","RM","RM Joelho",[tText("ligam","Ligamentos/meniscos"),tText("cart","Cartilagem/edema ósseo"),tText("imp","Impressão")]),
+  area("rm_ombro","RM","RM Ombro",[tText("manguito","Manguito/bíceps"),tText("labro","Lábro/cápsula"),tText("imp","Impressão")]),
+  area("usg_abd","USG","USG Abdome Total",[tText("hep","Fígado/VB/pâncreas"),tText("ren","Rins/vias urinárias"),tText("imp","Impressão")]),
+  area("usg_tireo","USG","USG Tireoide",[tText("parenq","Parênquima/linfonodos"),tText("nod","Nódulos/TIRADS"),tText("imp","Impressão")]),
+  area("usg_pelv","USG","USG Pélvico (fem/masc)",[tSelect("sexo","Sexo",["Feminino","Masculino"]),tText("orgaos","Órgãos/achados"),tText("imp","Impressão")]),
+
+  // Psicologia / Psiquiatria / Fisio
+  area("psi_triagem","👥 Psicologia","Triagem Psicológica",[tSelect("risco","Risco atual",["Baixo","Moderado","Alto"]),tSelect("humor","Humor",["Eutímico","Ansioso","Depressivo","Irritado"]),tText("queixa","Queixa principal"),tText("imp","Impressão")]),
+  area("psi_escuta","👥 Psicologia","Escuta Ativa – Registro",[tText("dem","Demanda"),tText("interv","Intervenções"),tText("plano","Plano/encaminhamentos")]),
+  area("psiq_risco","🧠 Psiquiatria","Avaliação de Risco",[tSelect("ideacao","Ideação suicida",["Ausente","Passiva","Ativa sem plano","Ativa com plano"]),tSelect("psicose","Sinais psicóticos",["Ausentes","Presentes"]),tText("subst","Uso de substâncias"),tText("imp","Impressão")]),
+  area("fisio_av","🦿 Fisioterapia","Avaliação Funcional",[tText("queixa","Queixa/História"),tText("deficits","Déficits"),tText("plano","Plano terapêutico")]),
+  area("fisio_evol","🦿 Fisioterapia","Evolução de Sessão",[tText("proc","Procedimentos realizados"),tText("resp","Resposta do paciente"),tText("plano","Plano para próxima sessão")]),
+];
+/* ===== fim catálogo ===== */
+
+// assinatura
+function sigKey(crm){return"sig_"+(crm||"");}
+function loadSig(crm){try{return localStorage.getItem(sigKey(crm))||"";}catch(e){return"";}}
+function applySignature(data){const prev=$("#sigPrev"); const img=$("#sigImg");
+  if(data){prev.innerHTML=`<img src="${data}" style="max-height:52px;max-width:100%">`;img.src=data;img.style.display="block";}
+  else{prev.textContent="sem assinatura";img.removeAttribute("src");img.style.display="none";}
+}
+$("#bSigUp").onclick=()=>$("#sigFile").click();
+$("#sigFile").onchange=e=>{const f=e.target.files?.[0]; if(!f) return; const r=new FileReader(); r.onload=ev=>applySignature(ev.target.result); r.readAsDataURL(f);};
+$("#bSigSave").onclick=()=>{const crm=$("#crm").value.trim(); const prev=$("#sigPrev").querySelector("img");
+  if(!crm) return alert("Informe o registro."); if(!prev) return alert("Carregue a imagem da assinatura.");
+  localStorage.setItem(sigKey(crm), prev.src); alert("Assinatura salva para "+crm);
+};
+function refreshSig(){const crm=$("#crm").value.trim(); applySignature(loadSig(crm));}
+
+// unidade: select + "Outra..."
+const unidSel=$("#unidSel"); const unidInp=$("#unid");
+unidSel.onchange=()=>{ if(unidSel.value==="Outra..."){unidInp.classList.remove("hide"); unidInp.focus();} else {unidInp.classList.add("hide");} render();};
+unidInp.oninput=render;
+
+// imagens
+function imgKey(id){return"img_"+id;} function loadImgs(id){try{return JSON.parse(localStorage.getItem(imgKey(id))||"[]");}catch(e){return[]}}
+function saveImgs(id,a){localStorage.setItem(imgKey(id), JSON.stringify(a));}
+function buildGallery(ex){const V=$("#viewGallery"); if(!V) return; V.innerHTML=""; const arr=loadImgs(ex.id); arr.forEach(o=>{V.appendChild(el(`<div class='thumb'><img src='${o.src}'><footer>${o.caption||""}</footer></div>`))});}
+function renderThumbs(ex){const T=$("#thumbs"); if(!T) return; T.innerHTML=""; const arr=loadImgs(ex.id);
+  arr.slice(0,6).forEach((o,i)=>{const c=el(`<div class="thumb"><img src="${o.src}"><footer><input placeholder="Legenda" value="${o.caption||''}"><button class='btn'>✕</button></footer></div>`);
+    const inp=c.querySelector("input"); const btn=c.querySelector("button");
+    inp.oninput=()=>{const t=loadImgs(ex.id); if(t[i]){t[i].caption=inp.value; saveImgs(ex.id,t); buildGallery(ex);}};
+    btn.onclick=()=>{const t=loadImgs(ex.id); t.splice(i,1); saveImgs(ex.id,t); renderThumbs(ex);};
+    T.appendChild(c);
+  }); buildGallery(ex);
+}
+function handleFiles(ex,files){const cur=loadImgs(ex.id); const tasks=[];
+  Array.from(files).forEach(f=>{if(!f.type.startsWith("image/"))return; if(cur.length+tasks.length>=6) return; const r=new FileReader();
+    tasks.push(new Promise(res=>{r.onload=e=>res({src:e.target.result,caption:""}); r.readAsDataURL(f);}));
+  });
+  Promise.all(tasks).then(newOnes=>{const merged=cur.concat(newOnes).slice(0,6); saveImgs(ex.id,merged); renderThumbs(ex);});
+}
+$("#drop").onclick=()=>$("#fileInput").click();
+$("#fileInput").onchange=e=>{if(current) handleFiles(current,e.target.files);}
+$("#drop").ondragover=e=>{e.preventDefault();}; $("#drop").ondrop=e=>{e.preventDefault(); if(current) handleFiles(current,e.dataTransfer.files);};
+
+// listagem/render
+const catSel=$("#cat"); ["Todas",...CATS].forEach(c=>catSel.appendChild(el(`<option value="${c}">${c}</option>`)));
+function buildList(){const q=($("#q").value||"").toLowerCase(); const c=catSel.value; const L=$("#list"); L.innerHTML="";
+  CATALOG.filter(x=>(c==="Todas"||x.cat===c)&&(x.name.toLowerCase().includes(q)||x.id.toLowerCase().includes(q)))
+  .forEach(x=>{const it=el(`<div class="item" data-id="${x.id}"><div><small>${x.cat}</small> • <strong>${x.name}</strong></div><small>${x.id}</small></div>`); it.onclick=()=>selectExam(x.id); L.appendChild(it);});
+}
+$("#q").oninput=buildList; catSel.onchange=buildList;
+
+let current=null;
+function selectExam(id){
+  const ex=CATALOG.find(x=>x.id===id); if(!ex) return; current=ex;
+  document.querySelectorAll(".item").forEach(d=>d.classList.toggle("sel", d.getAttribute("data-id")===id));
+  $("#v_title").textContent=ex.name; $("#v_tag").textContent=(ex.cat+"-"+ex.id).toUpperCase();
+  const F=$("#fields"); F.innerHTML="";
+  ex.fields.forEach(f=>{
+    if(f.type==="dynamic"){ buildDynamic(f.id); return; }
+    let c=""; if(f.type==="input") c=`<input id="f_${f.id}" value="${f.value||''}">`;
+    if(f.type==="textarea") c=`<textarea id="f_${f.id}">${f.value||""}</textarea>`;
+    if(f.type==="select") c=`<select id="f_${f.id}">${(f.options||[]).map(o=>`<option${(f.value===o)?' selected':''}>${o}</option>`).join('')}</select>`;
+    if(f.type==="checkboxes") c=`<div>${(f.options||[]).map((o,i)=>`<label style='display:flex;gap:6px;align-items:center;margin:4px 0'><input type='checkbox' id="f_${f.id}_${i}"><span>${o}</span></label>`).join('')}</div>`;
+    F.appendChild(el(`<label>${f.label||f.id}</label>`)); F.appendChild(el(c));
+  });
+  $("#secImgs").style.display=IMG_CATS.has(ex.cat)?"":"none";
+  renderThumbs(ex); render();
+}
+
+function autoConclusion(p){const n=parseFloat(p); if(isNaN(n)) return ""; if(n>=99) return `Compatível com vínculo biológico (probabilidade de ${n}%).`;
+  if(n>=90) return `Altamente sugestivo de vínculo biológico (probabilidade de ${n}%).`; return `Não compatível com vínculo biológico (probabilidade de ${n}%).`;
+}
+function section(v,title,fid){v.appendChild(el(`<div class='hr'></div>`)); v.appendChild(el(`<div class="section-title"><span class="dot"></span><strong>${title}</strong></div>`));
+  const box=el(`<div class='box'></div>`); const ta=$("#f_"+fid); box.innerHTML=(ta?.value||"").replace(/\n/g,"<br>"); v.appendChild(box);
+}
+
+function render(){
+  const unidVal=(unidSel.value==="Outra..."?(unid.value||"—"):unidSel.value);
+  $("#v_unid").textContent=unidVal; $("#v_data").textContent=$("#data").value||"—";
+  $("#v_paciente").textContent=$("#paciente").value||"—"; $("#v_doc").textContent=$("#doc").value||"—"; $("#v_idade").textContent=$("#idade").value||"—";
+  $("#v_sangue").textContent=$("#sangue").value||"—"; $("#v_contato").textContent=$("#contato").value||"—";
+  $("#v_medico").textContent=$("#medico").value||"—"; $("#v_crm").textContent=$("#crm").value||"—"; $("#sigM").textContent=$("#medico").value||"—"; $("#sigC").textContent=$("#crm").value||"—";
+  $("#v_num").textContent=Date.now().toString().slice(-8); $("#v_code").textContent=Math.random().toString(36).slice(2,10).toUpperCase();
+  refreshSig();
+  const ex=current; const v=$("#view"); v.innerHTML=""; if(!ex){v.textContent="Selecione um exame."; return;}
+  const g=el(`<div class='grid3'></div>`);
+  ex.fields.forEach(f=>{
+    if(f.type==="textarea"||f.type==="dynamic") return; let val="—";
+    if(f.type==="checkboxes"){const arr=[]; (f.options||[]).forEach((o,i)=>{const cb=$("#f_"+f.id+"_"+i); if(cb&&cb.checked) arr.push(o);}); val=arr.join(" • ")||"—";}
+    else{const elv=$("#f_"+f.id); if(elv) val=elv.value||"—";}
+    if(f.type==="input"||f.type==="select"||f.type==="checkboxes"){g.appendChild(el(`<div class='box'><div class='small'>${f.label||f.id}</div><div style='font-weight:800'>${val}</div></div>`));}
+  });
+  if(g.children.length) v.appendChild(g);
+
+  const order=["queixa","neuro","param","ach","achados","alin","espacos","list","art","comp","alca","ar","refer","interpret","interpre","valores","laudo","imp","conduta","orient","texto","obs","biometria","anatomia","valvas","cam","curvas","reac","res","trat","orgaos"];
+  const used=new Set(); order.forEach(fid=>{const F=(ex.fields||[]).find(ff=>ff.id===fid); if(F){used.add(fid); section(v,(F.label||fid[0].toUpperCase()+fid.slice(1)),fid);}});
+  (ex.fields||[]).forEach(F=>{if(F.type==="textarea"&&!used.has(F.id)) section(v,(F.label||F.id),F.id);});
+
+  if(ex.id==="lab_dna"){
+    const tbl=el(`<div class='box' style='margin-top:8px'><div class='table'><header><div>Participante</div><div>Parentesco</div><div>Amostra</div></header><div id='dnaRows'></div></div></div>`);
+    v.prepend(tbl); const rows=document.querySelectorAll("#dyn_participantes .row"); const container=tbl.querySelector("#dnaRows");
+    rows.forEach(r=>{const ins=r.querySelectorAll("input"); container.appendChild(el(`<div class='row'><div>${ins[0].value||"—"}</div><div>${ins[1].value||"—"}</div><div>${ins[2].value||"—"}</div></div>`));});
+    const prob=$("#f_prob")?.value||""; const auto=autoConclusion(prob);
+    v.appendChild(el(`<div class='box' style='margin-top:8px'><span class='badge-soft'>Conclusão</span><div style='margin-top:6px'>${auto||"—"}</div></div>`));
+  }
+  buildGallery(ex);
+}
+
+// dinâmico DNA
+function buildDynamic(fid){
+  const wrap=el(`<div id="dyn_${fid}"><label>Participantes (Nome, Parentesco, Amostra)</label><div id="dyn_${fid}_list"></div><div class="controls" style="margin-top:6px"><button class="btn" type="button" onclick="addDynRow('${fid}')">+ Adicionar</button></div></div>`);
+  $("#fields").appendChild(wrap); addDynRow(fid); addDynRow(fid);
+}
+function addDynRow(fid){const list=$("#dyn_"+fid+"_list"); const row=el(`<div class="grid3 row"><input placeholder="Nome"><input placeholder="Parentesco"><input placeholder="Amostra"></div>`); list.appendChild(row);}
+
+["data","paciente","doc","idade","sangue","contato","medico","crm"].forEach(id=>{$("#"+id).oninput=render;});
+$("#bRender").onclick=render;
+
+$("#bPNG").onclick=async()=>{const node=$("#paper"); const canvas=await html2canvas(node,{scale:2,backgroundColor:"#fff"}); const dataURL=canvas.toDataURL("image/png"); const a=$("#dl"); a.href=dataURL; a.click();};
+
+(function init(){
+  const catSel=$("#cat"); ["Todas",...CATS].forEach(c=>catSel.appendChild(el(`<option value="${c}">${c}</option>`)));
+  buildList(); catSel.value="Todas"; buildList();
+  const def="rx_torax"; const ex=CATALOG.find(x=>x.id===def)||CATALOG[0]; selectExam(ex.id); render();
+})();
+</script>
+</body>
+</html>
