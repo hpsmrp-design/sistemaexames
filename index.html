@@ -201,7 +201,7 @@ const CATALOG=[
   area("lab_tireo","🧪 Laboratório","Painel Tireoidiano",[tInput("tsh","TSH (µUI/mL)"),tInput("t4l","T4 Livre (ng/dL)"),tInput("t3","T3 (ng/dL)"),tText("imp","Impressão")]),
   area("lab_betahcg","🧪 Laboratório","Beta-HCG Quantitativo",[tSelect("amostra","Tipo de amostra",["Soro","Urina"],"Soro"),tInput("metodo","Método"),tInput("resultado","Resultado (mUI/mL)"),tText("refer","Valores de referência"),tText("interpret","Interpretação")]),
   area("adm_atestado","🧪 Laboratório","Atestado Médico",[tText("texto","Texto do atestado"),tInput("dias","Dias de afastamento"),tInput("cid","CID (opcional)"),tText("obs","Observações")]),
-  area("lab_dna","🧪 Laboratório","Teste de DNA – Paternidade (multi)",[tSelect("tipo","Tipo",["Paternidade","Maternidade","Irmindade"]),tDynamic("participantes","Participantes (Nome, Parentesco, Amostra)"),tInput("prob","Probabilidade (%)"),tText("laudo","Texto descritivo / Observações")]),
+  area("lab_dna","🧪 Laboratório","Teste de DNA",[tSelect("tipo","Tipo",["Paternidade","Maternidade","Irmandade"]),tDynamic("participantes","Participantes (Nome, Parentesco, Amostra)"),tInput("prob","Probabilidade (%)"),tText("laudo","Texto descritivo / Observações")]),
 
   // CARDIO
   area("card_ecg","❤️ Cardiologia","ECG",[tInput("fc","FC (bpm)"),tInput("pr","PR (ms)"),tInput("qrs","QRS (ms)"),tInput("qtc","QTc (ms)"),tSelect("ritmo","Ritmo",["Sinusal","Arritmia sinusal","FA"]),tText("imp","Impressão"),tText("conduta","Conduta")]),
@@ -303,17 +303,20 @@ const CATALOG=[
 // assinatura
 function sigKey(crm){return"sig_"+(crm||"");}
 function loadSig(crm){try{return localStorage.getItem(sigKey(crm))||"";}catch(e){return"";}}
+let tempSigData="";
 function applySignature(data){const prev=$("#sigPrev"); const img=$("#sigImg");
-  if(data){prev.innerHTML=`<img src="${data}" style="max-height:52px;max-width:100%">`;img.src=data;img.style.display="block";}
+  if(data){tempSigData=data; prev.innerHTML=`<img src="${data}" style="max-height:52px;max-width:100%">`;img.src=data;img.style.display="block";}
   else{prev.textContent="sem assinatura";img.removeAttribute("src");img.style.display="none";}
 }
 $("#bSigUp").onclick=()=>$("#sigFile").click();
 $("#sigFile").onchange=e=>{const f=e.target.files?.[0]; if(!f) return; const r=new FileReader(); r.onload=ev=>applySignature(ev.target.result); r.readAsDataURL(f);};
 $("#bSigSave").onclick=()=>{const crm=$("#crm").value.trim(); const prev=$("#sigPrev").querySelector("img");
-  if(!crm) return alert("Informe o registro."); if(!prev) return alert("Carregue a imagem da assinatura.");
+  if(!crm) return alert("Informe o registro para vincular esta assinatura (você pode carregar a imagem antes e salvar depois)."); if(!prev) return alert("Carregue a imagem da assinatura.");
   localStorage.setItem(sigKey(crm), prev.src); alert("Assinatura salva para "+crm);
 };
-function refreshSig(){const crm=$("#crm").value.trim(); applySignature(loadSig(crm));}
+function refreshSig(){const crm=$("#crm").value.trim(); const saved=loadSig(crm);
+  if(saved){applySignature(saved);} else if(tempSigData){applySignature(tempSigData);} else {applySignature("");}
+}
 
 // unidade: select + "Outra..."
 const unidSel=$("#unidSel"); const unidInp=$("#unid");
@@ -343,8 +346,8 @@ $("#fileInput").onchange=e=>{if(current) handleFiles(current,e.target.files);}
 $("#drop").ondragover=e=>{e.preventDefault();}; $("#drop").ondrop=e=>{e.preventDefault(); if(current) handleFiles(current,e.dataTransfer.files);};
 
 // listagem/render
-const catSel=$("#cat"); ["Todas",...CATS].forEach(c=>catSel.appendChild(el(`<option value="${c}">${c}</option>`)));
-function buildList(){const q=($("#q").value||"").toLowerCase(); const c=catSel.value; const L=$("#list"); L.innerHTML="";
+const catSel=$("#cat"); /* options appended in init() */
+function buildList(){const q=($("#q").value||"").toLowerCase(); const c=catSel.value||"Todas"; const L=$("#list"); L.innerHTML="";
   CATALOG.filter(x=>(c==="Todas"||x.cat===c)&&(x.name.toLowerCase().includes(q)||x.id.toLowerCase().includes(q)))
   .forEach(x=>{const it=el(`<div class="item" data-id="${x.id}"><div><small>${x.cat}</small> • <strong>${x.name}</strong></div><small>${x.id}</small></div>`); it.onclick=()=>selectExam(x.id); L.appendChild(it);});
 }
@@ -376,14 +379,13 @@ function section(v,title,fid){v.appendChild(el(`<div class='hr'></div>`)); v.app
 }
 
 function render(){
-  const unidVal=(unidSel.value==="Outra..."?(unid.value||"—"):unidSel.value);
+  const unidVal=(unidSel.value==="Outra..."?(unidInp.value||"—"):unidSel.value);
   $("#v_unid").textContent=unidVal; $("#v_data").textContent=$("#data").value||"—";
   $("#v_paciente").textContent=$("#paciente").value||"—"; $("#v_doc").textContent=$("#doc").value||"—"; $("#v_idade").textContent=$("#idade").value||"—";
   $("#v_sangue").textContent=$("#sangue").value||"—"; $("#v_contato").textContent=$("#contato").value||"—";
   $("#v_medico").textContent=$("#medico").value||"—"; $("#v_crm").textContent=$("#crm").value||"—"; $("#sigM").textContent=$("#medico").value||"—"; $("#sigC").textContent=$("#crm").value||"—";
   $("#v_num").textContent=Date.now().toString().slice(-8); $("#v_code").textContent=Math.random().toString(36).slice(2,10).toUpperCase();
-  refreshSig();
-  const ex=current; const v=$("#view"); v.innerHTML=""; if(!ex){v.textContent="Selecione um exame."; return;}
+const ex=current; const v=$("#view"); v.innerHTML=""; if(!ex){v.textContent="Selecione um exame."; return;}
   const g=el(`<div class='grid3'></div>`);
   ex.fields.forEach(f=>{
     if(f.type==="textarea"||f.type==="dynamic") return; let val="—";
@@ -414,15 +416,19 @@ function buildDynamic(fid){
 }
 function addDynRow(fid){const list=$("#dyn_"+fid+"_list"); const row=el(`<div class="grid3 row"><input placeholder="Nome"><input placeholder="Parentesco"><input placeholder="Amostra"></div>`); list.appendChild(row);}
 
-["data","paciente","doc","idade","sangue","contato","medico","crm"].forEach(id=>{$("#"+id).oninput=render;});
+["data","paciente","doc","idade","sangue","contato","medico"].forEach(id=>{$("#"+id).oninput=render;});
+$("#crm").oninput=()=>{refreshSig(); render();};
 $("#bRender").onclick=render;
 
 $("#bPNG").onclick=async()=>{const node=$("#paper"); const canvas=await html2canvas(node,{scale:2,backgroundColor:"#fff"}); const dataURL=canvas.toDataURL("image/png"); const a=$("#dl"); a.href=dataURL; a.click();};
 
 (function init(){
-  const catSel=$("#cat"); ["Todas",...CATS].forEach(c=>catSel.appendChild(el(`<option value="${c}">${c}</option>`)));
-  buildList(); catSel.value="Todas"; buildList();
-  const def="rx_torax"; const ex=CATALOG.find(x=>x.id===def)||CATALOG[0]; selectExam(ex.id); render();
+  const catSel=$("#cat");
+  catSel.innerHTML="";
+  ["Todas",...CATS].forEach(c=>catSel.appendChild(el(`<option value="${c}">${c}</option>`)));
+  catSel.value="Todas";
+  buildList();
+  const def="rx_torax"; const ex=CATALOG.find(x=>x.id===def)||CATALOG[0]; selectExam(ex.id); refreshSig(); render();
 })();
 </script>
 </body>
